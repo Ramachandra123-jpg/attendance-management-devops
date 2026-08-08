@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard · Employee Management System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand"><span class="logo-dot"></span><span class="brand-text">EMS</span></div>
+        <nav>
+            <a href="dashboard.html" class="active"><span>🏠</span><span class="link-text">Dashboard</span></a>
+            <a href="employees.html"><span>👤</span><span class="link-text">Employees</span></a>
+            <a href="attendance.html"><span>🗓️</span><span class="link-text">Attendance</span></a>
+            <a href="reports.html"><span>📊</span><span class="link-text">Reports</span></a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-chip"><strong id="sidebarUserName">-</strong><span id="sidebarUserRole"></span></div>
+            <button class="logout-btn" onclick="logout()"><span>Log out</span></button>
+        </div>
+    </aside>
+
+    <main class="main">
+        <div class="page-header">
+            <div>
+                <h1>Dashboard</h1>
+                <p>Overview of your workforce and today's attendance.</p>
+            </div>
+        </div>
+
+        <div class="stats-grid" id="statsGrid">
+            <div class="stat-card">
+                <div class="stat-label">Total Employees</div>
+                <div class="stat-value" id="statTotal">-</div>
+            </div>
+            <div class="stat-card accent-success">
+                <div class="stat-label">Active Employees</div>
+                <div class="stat-value" id="statActive">-</div>
+            </div>
+            <div class="stat-card accent-success">
+                <div class="stat-label">Present Today</div>
+                <div class="stat-value" id="statPresent">-</div>
+            </div>
+            <div class="stat-card accent-danger">
+                <div class="stat-label">Absent Today</div>
+                <div class="stat-value" id="statAbsent">-</div>
+            </div>
+            <div class="stat-card accent-amber">
+                <div class="stat-label">On Leave Today</div>
+                <div class="stat-value" id="statLeave">-</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Departments</div>
+                <div class="stat-value" id="statDept">-</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 style="margin-top:0; font-size:16px;">Quick actions</h2>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                <a class="btn btn-primary" href="employees.html">+ Add Employee</a>
+                <a class="btn btn-secondary" href="attendance.html">Mark Attendance</a>
+                <a class="btn btn-secondary" href="reports.html">View Reports</a>
+            </div>
+        </div>
+    </main>
+</div>
+
+<div id="toast"></div>
+
+<script src="js/api.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

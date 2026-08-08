@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login · Employee Management System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="login-wrap">
+    <div class="login-card">
+        <div class="login-brand">
+            <span class="logo-dot"></span>
+            <strong>EMS</strong>
+        </div>
+        <h1>Welcome back</h1>
+        <p class="subtitle">Sign in to manage employees and attendance.</p>
+
+        <div class="login-error" id="loginError"></div>
+
+        <form id="loginForm">
+            <div class="field">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" autocomplete="username" required>
+            </div>
+            <div class="field">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" autocomplete="current-password" required>
+            </div>
+            <button type="submit" class="btn btn-primary" id="loginBtn">Sign In</button>
+        </form>
+
+        <p class="hint">Default login &mdash; username: <strong>admin</strong> &nbsp;|&nbsp; password: <strong>admin123</strong></p>
+    </div>
+</div>
+
+<div id="toast"></div>
+
+<script src="js/api.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

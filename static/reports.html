@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reports · Employee Management System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand"><span class="logo-dot"></span><span class="brand-text">EMS</span></div>
+        <nav>
+            <a href="dashboard.html"><span>🏠</span><span class="link-text">Dashboard</span></a>
+            <a href="employees.html"><span>👤</span><span class="link-text">Employees</span></a>
+            <a href="attendance.html"><span>🗓️</span><span class="link-text">Attendance</span></a>
+            <a href="reports.html" class="active"><span>📊</span><span class="link-text">Reports</span></a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-chip"><strong id="sidebarUserName">-</strong><span id="sidebarUserRole"></span></div>
+            <button class="logout-btn" onclick="logout()"><span>Log out</span></button>
+        </div>
+    </aside>
+
+    <main class="main">
+        <div class="page-header">
+            <div>
+                <h1>Attendance Reports</h1>
+                <p>Monthly present / absent / leave summary per employee.</p>
+            </div>
+        </div>
+
+        <div class="toolbar">
+            <label style="font-size:13px; color:#6b7688;">Month:</label>
+            <select id="monthSelect"></select>
+            <label style="font-size:13px; color:#6b7688;">Year:</label>
+            <select id="yearSelect"></select>
+            <div class="spacer"></div>
+            <span id="resultCount" style="font-size:13px; color:#6b7688;"></span>
+        </div>
+
+        <div id="tableWrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Employee</th>
+                        <th>Present</th>
+                        <th>Absent</th>
+                        <th>Half Day</th>
+                        <th>Leave</th>
+                        <th>Total Marked</th>
+                    </tr>
+                </thead>
+                <tbody id="reportTableBody">
+                </tbody>
+            </table>
+            <div class="empty-state" id="emptyState" style="display:none;">No data for this period.</div>
+        </div>
+    </main>
+</div>
+
+<div id="toast"></div>
+
+<script src="js/api.js"></script>
+<script src="js/reports.js"></script>
+</body>
+</html>
