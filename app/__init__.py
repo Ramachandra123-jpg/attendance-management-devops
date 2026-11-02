@@ -18,6 +18,14 @@ def create_app():
     app.register_blueprint(attendance_bp)
     app.register_blueprint(dashboard_bp)
 
+    @app.route("/health", methods=["GET"])
+    def health():
+        return {
+            "application": "Attendance Management System",
+            "status": "UP",
+            "message": "Application is running successfully"
+        }, 200
+
     @app.route("/")
     def index():
         return send_from_directory(static_dir, "index.html")
